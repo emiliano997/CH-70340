@@ -13,7 +13,7 @@ import mongoose from "mongoose";
 const app = express();
 const PORT = 5000;
 const DB_NAME = "CH-70340";
-const MONGO_URL = `mongodb+srv://emi:1234@curso-nodejs.de1bv.gcp.mongodb.net/${DB_NAME}?retryWrites=true&w=majority&appName=curso-nodejs`;
+const MONGO_URL = ``;
 // Express config
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
