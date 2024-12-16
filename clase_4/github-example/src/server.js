@@ -13,8 +13,7 @@ import { initializePassport } from "./config/passport.config.js";
 
 const app = express();
 const PORT = 5000;
-const MONGO_URI =
-  "mongodb+srv://emi:1234@curso-nodejs.de1bv.gcp.mongodb.net/github-example?retryWrites=true&w=majority&appName=curso-nodejs";
+const MONGO_URI = "";
 
 // Express config
 app.use(express.json());

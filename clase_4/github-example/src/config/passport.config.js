@@ -4,8 +4,8 @@ import GithubStrategy from "passport-github2";
 import passport from "passport";
 
 // --- Esto no se debería subir al repositorio ---
-const GITHUB_CLIENT_ID = "Iv23liiRV0YnMS4B8Nfr";
-const GITHUB_CLIENT_SECRET = "c9321e32f3ff814465c8c980be46ed1a82c182a4";
+const GITHUB_CLIENT_ID = "";
+const GITHUB_CLIENT_SECRET = "";
 
 export function initializePassport() {
   // --- Github strategy configuration ---
@@ -16,6 +16,7 @@ export function initializePassport() {
         clientID: GITHUB_CLIENT_ID,
         clientSecret: GITHUB_CLIENT_SECRET,
         callbackURL: "http://localhost:5000/api/sessions/github-callback",
+        scope: ["user:email"],
       },
       async (accessToken, refreshToken, profile, done) => {
         console.log(profile);
