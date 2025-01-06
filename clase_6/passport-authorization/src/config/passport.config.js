@@ -18,7 +18,7 @@ export function intializePassport() {
           console.log("payload", payload);
 
           if (payload.email !== "admin@gmail.com") {
-            return done(null, false);
+            return done(null, false, { messages: "User not found" });
           }
 
           return done(null, payload); // req.user

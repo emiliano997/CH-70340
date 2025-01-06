@@ -52,15 +52,11 @@ app.get(
   }
 );
 
-app.get(
-  "/protected",
-  passport.authenticate("jwt", { session: false }),
-  (req, res) => {
-    res.json({
-      message: "Protected route",
-    });
-  }
-);
+app.get("/protected", passport.authenticate("jwt"), (req, res) => {
+  res.json({
+    message: "Protected route",
+  });
+});
 
 app.listen(5000, () => {
   console.log("Server is running on http://localhost:5000");

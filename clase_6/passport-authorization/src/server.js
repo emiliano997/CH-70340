@@ -3,6 +3,8 @@ import cookieParser from "cookie-parser";
 import jwt from "jsonwebtoken";
 import passport from "passport";
 import { intializePassport } from "./config/passport.config.js";
+import { passportCall } from "./middlewares/passport.middleware.js";
+import { authorization } from "./middlewares/authorization.middleware.js";
 
 const app = express();
 
@@ -29,6 +31,7 @@ app.post("/login", (req, res) => {
 
   const payload = {
     email,
+    role: "user",
   };
 
   const token = jwt.sign(payload, "s3cr3t", { expiresIn: "2m" });
@@ -41,20 +44,17 @@ app.post("/login", (req, res) => {
   res.json({ message: "Login successful" });
 });
 
-app.get(
-  "/current",
-  passport.authenticate("jwt", { session: false }),
-  (req, res) => {
-    res.json({
-      message: "Current user",
-      token: req.user,
-    });
-  }
-);
+app.get("/current", passportCall("jwt"), (req, res) => {
+  res.json({
+    message: "Current user",
+    token: req.user,
+  });
+});
 
 app.get(
   "/protected",
-  passport.authenticate("jwt", { session: false }),
+  passportCall("jwt"),
+  authorization("admin"),
   (req, res) => {
     res.json({
       message: "Protected route",
