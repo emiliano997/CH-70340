@@ -1,0 +1,14 @@
+### POST user
+
+POST http://localhost:5000/api/users
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3OTM5NmRkZTY2ZDQ3Mzk1NmQ1NzNiYSIsImVtYWlsIjoiZW1pK3Rlc3RAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpYXQiOjE3Mzc3MjU2OTEsImV4cCI6MTczNzcyNjI5MX0.TLuXUv_eVeL7AwcD6nnsXFjIeNOwmljgi_gB2MOnI_8
+
+{
+  "first_name": "Emiliano",
+  "last_name": "Kusuma",
+  "email": "emi@gmail.com",
+  "password": "123456",
+  "age": 23,
+  "role": "user"
+}
