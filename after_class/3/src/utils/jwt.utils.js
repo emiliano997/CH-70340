@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import { CONFIG } from "../config/config";
+import { CONFIG } from "../config/config.js";
 
 export const SECRET = CONFIG.JWT.SECRET;
 
