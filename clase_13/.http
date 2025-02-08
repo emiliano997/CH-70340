@@ -1,0 +1,14 @@
+### GET users
+
+GET http://localhost:5000/api/users
+
+### POST users
+
+POST http://localhost:5000/api/users
+Content-Type: application/json
+
+{
+  "fullName": "Juan Perez",
+  "email": "emi.perez997@gmail.com",
+  "phone": "+541134125678"
+}
